@@ -1,28 +1,46 @@
-import React from "react";
+import { Navbar } from "./Navbar"
+import Card from "./Card"
+// Un componente es una funcion (function o arrow function) que devuelve solo un JSX
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+// Fragmento de react
 
-//create your first component
-const Home = () => {
-	return (
-		<div className="text-center">
-            
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
-};
+function Home() {
+    // Aquí podemos escribir javascript 
+    let names = ["Juana", "Deimian", "Marcos", "Carlos"]
 
-export default Home;
+    return (
+        <> {/* Esto es un Fragmento de react */}
+            {/* Navbar */}
+            <Navbar />
+
+            <h1>Hola desde el componente Home</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Totam asperiores at placeat consectetur sed praesentium
+                pariatur aperiam, beatae sit suscipit nemo necessitatibus.
+                Maiores nulla asperiores, veniam dolorum mollitia beatae eum.
+            </p>
+
+            <div className="container">
+                <div className="row">
+
+                    {/* <Card />
+                    <Card />
+                    <Card /> */}
+                    {
+                        names.map(() => {
+                            return (
+                                <Card />
+                            )
+                        })
+                    }
+
+                </div>
+            </div>
+        </>
+
+    )
+}
+
+export default Home
